@@ -1,0 +1,17 @@
+﻿@model Employee
+
+<h2>Delete Employee</h2>
+
+<div>
+    <h4>Are you sure you want to delete this employee?</h4>
+    <h2>@Model.Name</h2>
+    <p>@Model.Address</p>
+    <p>@Model.Mobile</p>
+    <p>@Model.DOB</p>
+
+     <form action="/Employee/DeleteEmployee" method="post">
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model=>model.Id)
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    </form>
+</div>
